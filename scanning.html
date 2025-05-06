@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plastecure - Scanning</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="scanning.css">
+</head>
+<body>
+
+    <!-- <button id="scanBottleBtn">Scan Bottle</button> -->
+
+    <div class="scan-container">
+        <!-- Project Logo -->
+        <img src="assets/logo.jpg" alt="Plastecure Logo" class="logo">
+
+        <!-- Scanning Animation Circle -->
+        <div class="scanning-circle">
+            <div class="scanner"></div>
+        </div>
+
+        <!-- Scanning Status -->
+        <div class="scanning-status">
+            <p id="scanning-text">Scanning Bottle...</p>
+        </div>
+    </div>
+
+    <button id="scanButton">Scan Bottle</button>
+
+    <script>
+        // Add an event listener to the Scan Bottle button
+        document.getElementById('scanButton').addEventListener('click', function() {
+          // Redirect to the scanning page
+          window.location.href = 'scanning.html'; // Replace with the actual path of the scanning page
+        });
+      </script>
+      
+
+    <script src="scanning.js"></script>
+</body>
+</html>

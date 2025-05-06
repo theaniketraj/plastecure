@@ -1,0 +1,77 @@
+/* login-style.css */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #d1c4e9, #8e24aa);
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.login-container {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+}
+
+.logo {
+    width: 350px;
+    height: 150px;
+    margin-bottom: 50px;
+}
+
+.login-text {
+    font-size: 28px;
+    color: #6a1b9a;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 16px;
+    color: #6a1b9a;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #b39ddb;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #6a1b9a;
+    box-shadow: 0 4px 10px rgba(106, 27, 154, 0.2);
+    outline: none;
+}
+
+.next-page-icon {
+    margin-top: 30px;
+}
+
+.next-page-icon img {
+    width: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.next-page-icon img:hover {
+    transform: scale(1.2);
+}

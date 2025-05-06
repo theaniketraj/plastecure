@@ -1,0 +1,75 @@
+/* scan-style.css */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('environment-bg.jpg'); /* Replace with your environmental image */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.scan-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.logo {
+    width: 350px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+/* Scanning Circle */
+.scanning-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #00c853;
+    margin: 0 auto;
+    position: relative;
+}
+
+.scanner {
+    width: 40px;
+    height: 40px;
+    background-color: #00c853;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: scanning-animation 2s infinite linear;
+}
+
+/* Animation for scanner movement */
+@keyframes scanning-animation {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.scanning-status {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+#scanning-text {
+    color: #00796b;
+}

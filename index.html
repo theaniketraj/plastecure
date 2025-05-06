@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plastecure</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <!-- </title> -->
+    <link rel="stylesheet" href="welcome-style.css">
+</head>
+
+<body>
+
+    <!-- <div class="welcome-container">
+        <!-- Project Logo -->
+    <!-- <img src="logo.png" alt="Pill Cycle Logo" class="logo"> -->
+
+    <!-- Welcome Text -->
+    <!-- <h1 class="welcome-text">Welcome to Plastecure</h1> -->
+    <!-- <p class="tagline">Healing the Earth, one bottle at a time.</p> -->
+
+    <!-- Next Page Icon -->
+    <!-- <div class="next-page-icon"> -->
+    <!-- <img src="Next-Icon.svg" alt="Next" id="next-btn"> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Plastecure Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <section class="landing-container">
+        <div class="content">
+            <h1>Welcome to Plastecure</h1>
+            <p>Healing the Earth. One bottle at a time.</p>
+            <button class="btn-main" onclick="window.location.href='login.html'">My Dashboard</button>
+        </div>
+    </section>
+
+    <div class="bottom-buttons">
+        <a href="docs.html" class="bottom-button">Docs</a>
+        <!-- <a href="support.html" class="bottom-button">Support</a> -->
+        <a href="status.html" class="bottom-button">Status</a>
+    </div>
+    
+
+
+    <!-- In index.html
+    <a href="team.html">
+        <button class="btn team-btn">Team</button>
+    </a> -->
+    <script>
+        if (window.innerWidth < 768) {
+            alert("For the best experience, we recommend switching to desktop mode.");
+        }
+    </script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyCy8IqIztOOIOEDZyjrBQLOkz8DUMsj0ls",
+            authDomain: "plastecure.firebaseapp.com",
+            databaseURL: "https://plastecure-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "plastecure",
+            storageBucket: "plastecure.firebasestorage.app",
+            messagingSenderId: "258042144487",
+            appId: "1:258042144487:web:751a5b4c3fec9739cfa442",
+            measurementId: "G-DK262N1263"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
+    <script src="welcome.js"></script>
+</body>
+
+</html>

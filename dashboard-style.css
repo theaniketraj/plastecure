@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body and Background */
+body {
+  background: #000;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.rotating-pill {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  height: 75%;
+  background: rgba(0, 255, 0, 0.1);
+  border: 3px solid rgba(0, 255, 0, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: rotate-pill 20s linear infinite;
+}
+
+@keyframes rotate-pill {
+  from {
+      transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+      transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.logo img {
+  width: 150px;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-button {
+  background-color: #00ff6c;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu-button:hover {
+  background-color: #00d95c;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Main */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.dashboard-title {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px #00ff6c;
+}
+
+.dashboard-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.dashboard-card {
+  background: #111;
+  padding: 30px 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+.dashboard-card h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.dashboard-card button {
+  background: #00ff6c;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dashboard-card button:hover {
+  background: #00d95c;
+}
