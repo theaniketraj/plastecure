@@ -109,23 +109,3 @@ npm start  # Starts local development server
 |--------|---------|-------------|
 | `POST` | `/users` | Add user & bottle count |
 | `GET`  | `/users?user_id=eq.{user_id}` | Fetch user details |
-
----
-
-## 🤝 Contributing  
-
-🚀 **We welcome contributions!**  
-
-### **How to Contribute**  
-
-1. **Fork the repo** 📌  
-2. **Create a feature branch** (`git checkout -b feature-xyz`)  
-3. **Commit changes** (`git commit -m "Added new feature"`)  
-4. **Push changes** (`git push origin feature-xyz`)  
-5. **Create a Pull Request (PR)**  
-
-### **Contribution Guidelines**
-
-- Follow proper **code structure & comments**
-- Ensure **mobile responsiveness**
-- Keep **API keys & credentials secure**
