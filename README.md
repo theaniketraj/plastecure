@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Plastecure - Smart Plastic Waste Management System
 
 ![Plastecure Banner](https://github.com/theaniketraj/plastecure/blob/main/assets/logo_clean.jpg)
@@ -115,3 +116,6 @@ npm start  # Starts local development server
 
 ## 📝 License  
 Plastecure is **open-source** under the [MIT License](LICENSE). Feel free to use and modify it!  
+=======
+# plastecure
+>>>>>>> 8d63e7c4ceb7b78f256244326769f6121c548a2f
