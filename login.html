@@ -2,93 +2,44 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plastecure - Login</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="stylesheet" href="login-style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="stylesheet" href="login-style.css" />
 </head>
 
 <body>
 
     <div class="login-container">
-        <!-- Project Logo -->
-        <!-- <img src="logo_clean.jpg" alt="Plastecure" Logo" class="logo"> 
-        -->
         <a href="index.html">
-            <img src="assets/logo_clean.jpg" alt="Plastecure Logo" class="logo">
-            </a>
+            <img src="assets/logo_clean.jpg" alt="Plastecure Logo" class="logo" />
+        </a>
 
-        <script>
-            // Handle form submission to store user data in localStorage
-            document.getElementById("loginForm").addEventListener("submit", function (event) {
-                event.preventDefault();
-
-                // Get input values
-                const username = document.getElementById("username").value;
-                const userId = document.getElementById("userId").value;
-
-                // Store values in localStorage
-                localStorage.setItem("userName", username);
-                localStorage.setItem("userId", userId);
-
-                // Redirect to dashboard after login
-                window.location.href = "dashboard.html";  // Ensure this leads to your dashboard page
-            });
-        </script>
-
-        <!-- Login Form -->
         <h1 class="login-text">Login</h1>
 
-        <!-- <form id="login-form">
-            <!-- Name Field -->
         <div class="input-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Enter your name" required>
+            <label for="username">Name</label>
+            <input type="text" id="username" placeholder="Enter your name" required />
         </div>
 
-        <!-- Unique ID Field -->
         <div class="input-group">
-            <label for="unique-id">Unique ID</label>
-            <input type="text" id="unique-id" placeholder="Enter your unique ID" required>
+            <label for="userId">Unique ID</label>
+            <input type="text" id="userId" placeholder="Enter your unique ID" required />
         </div>
-
 
         <div class="next-page-icon">
-            <img src="assets/Next-Icon.svg" alt="Next" id="next-btn">
+            <img src="assets/Next-Icon.svg" alt="Next" id="next-btn" style="cursor:pointer;" />
         </div>
-        </form>
     </div>
 
+    <!-- Firebase Compat SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database-compat.js"></script>
+
+    <!-- Your Login Logic -->
     <script src="login.js"></script>
-
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js"></script>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-          authDomain: "plastecure1.firebaseapp.com",
-          projectId: "plastecure1",
-          storageBucket: "plastecure1.appspot.com",
-          messagingSenderId: "891596466884",
-          appId: "1:891596466884:web:e34c4e1f6f49dc8e927791",
-          measurementId: "G-YW74CM2LMY"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
-
 </body>
 
 </html>
