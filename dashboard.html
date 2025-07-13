@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pill Cycle Dashboard</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="stylesheet" href="dashboard-style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plastecure - Dashboard</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="stylesheet" href="dashboard-style.css" />
 </head>
+
 <body>
     <div class="background">
         <div class="rotating-pill"></div>
@@ -16,25 +18,18 @@
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="assets/logo.png" alt="Plastecure Logo">
+                <img src="assets/logo.png" alt="Plastecure Logo" />
             </a>
-        </div>
-        <div class="menu"
-            <img src="assets/logo.png" alt="Plastecure Logo">
         </div>
         <div class="menu">
-            <a href="pricing.html">
-                <button class="menu-button">Pricing</button>
-            </a>
-            <a href="about.html">
-                <button class="menu-button">About</button>
-            </a>
-            <a href="team.html">
-                <button class="menu-button">Team</button>
-            </a>
-            <!-- <button class="menu-button">About</button>
-            <button class="menu-button">Team</button> -->
-            <img class="user-icon" src="assets/user.svg" alt="User Icon">
+            <a href="pricing.html"><button class="menu-button">Pricing</button></a>
+            <a href="about.html"><button class="menu-button">About</button></a>
+            <a href="team.html"><button class="menu-button">Team</button></a>
+            <img class="user-icon" id="user-icon" src="assets/user.svg" alt="User Icon" />
+            <div class="user-info-popup" style="display:none;">
+                <p>Name: <span id="userName">--</span></p>
+                <p>ID: <span id="userId">--</span></p>
+            </div>
         </div>
     </header>
 
@@ -43,13 +38,25 @@
         <div class="dashboard-buttons">
             <div class="dashboard-card">
                 <h2>Bottle Count</h2>
-                <button>View Count</button>
+                <p id="bottle-count">--</p>
             </div>
             <div class="dashboard-card">
                 <h2>Total Rewards</h2>
-                <button>View Reward</button>
+                <p id="total-rewards">--</p>
+                <a href="claim.html">
+                    <button class="view-button">Claim Rewards</button>
+                </a>
+
             </div>
         </div>
     </main>
+
+    <!-- Firebase Compat SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database-compat.js"></script>
+
+    <!-- Dashboard Logic -->
+    <script src="dashboard.js"></script>
 </body>
+
 </html>
