@@ -1,50 +1,54 @@
-// dashboard.js
-document.getElementById('user-icon').addEventListener('mouseenter', function() {
-    // Show popup when hovering over the user icon
+// 1️⃣ Firebase config (same as login.js)
+const firebaseConfig = {
+    apiKey: "AIzaSyCy8IqIztOOIOEDZyjrBQLOkz8DUMsj0ls",
+    authDomain: "plastecure.firebaseapp.com",
+    databaseURL: "https://plastecure-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "plastecure",
+    storageBucket: "plastecure.firebasestorage.app",
+    messagingSenderId: "258042144487",
+    appId: "1:258042144487:web:751a5b4c3fec9739cfa442",
+}
+
+// 2️⃣ Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
+// 3️⃣ Load user info from localStorage
+const userName = localStorage.getItem("userName") || "Guest";
+const userId = localStorage.getItem("userId");
+if (!userId) {
+    alert("No user logged in. Redirecting to Login.");
+    window.location.href = "login.html";
+    throw new Error("Missing userId");
+}
+
+// 4️⃣ Populate user‐info popup
+document.getElementById("userName").textContent = userName;
+document.getElementById("userId").textContent = userId;
+
+// 5️⃣ Fetch Bottle Count & Rewards
+database
+    .ref("users/" + userId)
+    .once("value")
+    .then(snapshot => {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            document.getElementById("bottle-count").textContent = data.bottle_count ?? 0;
+            document.getElementById("total-rewards").textContent = data.total_rewards ?? 0;
+        } else {
+            throw new Error("User data not found");
+        }
+    })
+    .catch(err => {
+        console.error("Error loading user data:", err);
+        alert("Could not load your data. Please try again.");
+    });
+
+// 6️⃣ Existing UI logic
+// Hover popup
+document.getElementById('user-icon').addEventListener('mouseenter', () => {
     document.querySelector('.user-info-popup').style.display = 'block';
 });
-
-document.getElementById('user-icon').addEventListener('mouseleave', function() {
-    // Hide popup when not hovering over the user icon
+document.getElementById('user-icon').addEventListener('mouseleave', () => {
     document.querySelector('.user-info-popup').style.display = 'none';
-});
-
-<script>
-    {/* {/* // Example: Replace these values with actual user data from an API, local storage, or form input */}
-    const userName = "Jane Smith";  // Replace with dynamic user name
-    const userId = "98765";         // Replace with dynamic user ID
-
-    // Set the values to the appropriate elements
-    document.getElementById("userName").textContent = userName;
-    document.getElementById("userId").textContent = userId;
-</script>
-
-// Get the user data from localStorage
-const userName = localStorage.getItem("userName");
-const userId = localStorage.getItem("userId");
-
-// Set the retrieved values in the popup elements
-document.getElementById("userName").textContent = userName || "Jane Doe";  // Fallback to 'Jane Doe'
-document.getElementById("userId").textContent = userId || "98765";         // Fallback to '98765'
-
-
-// dashboard.js
-document.addEventListener('DOMContentLoaded', function() {
-    const scanButton = document.getElementById('scanBottleBtn');
-    
-    // Check if the button exists
-    if (scanButton) {
-        // Add an event listener to the button
-        scanButton.addEventListener('click', function() {
-            window.location.href = 'scanning.html'; // Adjust the path if needed
-        });
-    } else {
-        console.error('Scan Bottle button not found!');
-    }
-
-    scanButton.addEventListener('click', function() {
-        alert('Scan Bottle button clicked!'); // For debugging
-        window.location.href = 'scanning.html';
-    });
-    
 });
