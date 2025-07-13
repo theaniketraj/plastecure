@@ -14,7 +14,6 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 html {
@@ -44,10 +43,10 @@ html {
 
 @keyframes rotate-pill {
   from {
-      transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-      transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
@@ -87,19 +86,39 @@ header {
 }
 
 .user-icon {
+  background-color: #00ff6c;
+  border: none;
+  border-radius: 5px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
 }
 
-/* Main */
+/* User Info Popup */
+.user-info-popup {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: #222;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+  color: #fff;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+/* Main Content */
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  justify-content: flex-start;
+  flex-grow: 1;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  overflow-y: auto;
 }
 
 .dashboard-title {
@@ -108,9 +127,13 @@ main {
   text-shadow: 0 0 10px #00ff6c;
 }
 
+/* Dashboard Cards */
 .dashboard-buttons {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
+  margin-top: 10px;
 }
 
 .dashboard-card {
@@ -119,6 +142,10 @@ main {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  min-width: 250px;
+  max-width: 300px;
+  flex: 1 1 250px;
+  color: #fff;
 }
 
 .dashboard-card h2 {
@@ -126,17 +153,26 @@ main {
   font-size: 1.5rem;
 }
 
-.dashboard-card button {
-  background: #00ff6c;
-  color: #000;
-  border: none;
+.dashboard-card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.view-button {
+  margin-top: 10px;
   padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s;
 }
 
-.dashboard-card button:hover {
-  background: #00d95c;
+.view-button:hover {
+  background-color: #0056b3;
 }
