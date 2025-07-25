@@ -1,103 +1,107 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212; /* AMOLED black */
-    color: #f0f0f0; /* Light text for contrast */
-    line-height: 1.6;
+  font-family: "Arial", sans-serif;
+  background-color: #121212; /* AMOLED black */
+  color: #f0f0f0; /* Light text for contrast */
+  line-height: 1.6;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Header */
 header {
-    background-color: #1e1e1e;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #333;
+  background-color: #1e1e1e;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
 }
 
 .logo img {
-    height: 50px;
+  height: 50px;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
 }
 
 nav a {
-    text-decoration: none;
-    color: #76c7c0; /* Eco-friendly green */
-    font-weight: bold;
-    transition: color 0.3s;
+  text-decoration: none;
+  color: #76c7c0; /* Eco-friendly green */
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #58a8a1;
+  color: #58a8a1;
 }
 
 /* Sections */
 .section {
-    padding: 2rem;
-    margin: 2rem auto;
-    max-width: 800px;
-    border: 1px solid #333;
-    border-radius: 10px;
-    background-color: #1e1e1e;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background-color: #1e1e1e;
 }
 
-.section h1, .section h2 {
-    color: #76c7c0;
-    margin-bottom: 1rem;
+.section h1,
+.section h2 {
+  color: #76c7c0;
+  margin-bottom: 1rem;
 }
 
-.section p, .section ul, .section ol {
-    margin-bottom: 1rem;
+.section p,
+.section ul,
+.section ol {
+  margin-bottom: 1rem;
 }
 
 /* Lists */
-ul, ol {
-    padding-left: 1.5rem;
+ul,
+ol {
+  padding-left: 1.5rem;
 }
 
 ul li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* FAQs */
 .faq-item {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .faq-item h3 {
-    color: #76c7c0;
+  color: #76c7c0;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 1rem 0;
-    background-color: #1e1e1e;
-    color: #666;
-    border-top: 1px solid #333;
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #1e1e1e;
+  color: #666;
+  border-top: 1px solid #333;
 }
 
 footer a {
-    color: #76c7c0;
-    text-decoration: none;
+  color: #76c7c0;
+  text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
