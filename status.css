@@ -1,136 +1,137 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212; /* AMOLED black */
-    color: #f0f0f0; /* Light text for contrast */
-    line-height: 1.6;
+  font-family: "Arial", sans-serif;
+  background-color: #121212; /* AMOLED black */
+  color: #f0f0f0; /* Light text for contrast */
+  line-height: 1.6;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Header */
 header {
-    background-color: #1e1e1e;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #333;
+  background-color: #1e1e1e;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
 }
 
 .logo img {
-    height: 50px;
+  height: 50px;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
 }
 
 nav a {
-    text-decoration: none;
-    color: #76c7c0; /* Eco-friendly green */
-    font-weight: bold;
-    transition: color 0.3s;
+  text-decoration: none;
+  color: #76c7c0; /* Eco-friendly green */
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-nav a:hover, .active {
-    color: #58a8a1;
+nav a:hover,
+.active {
+  color: #58a8a1;
 }
 
 /* Main Section */
 main {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .status-section {
-    text-align: center;
-    margin: auto;
-    max-width: 800px;
-    background-color: #1e1e1e;
-    padding: 2rem;
-    border: 1px solid #333;
-    border-radius: 10px;
+  text-align: center;
+  margin: auto;
+  max-width: 800px;
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border: 1px solid #333;
+  border-radius: 10px;
 }
 
 .status-section h1 {
-    color: #76c7c0;
-    margin-bottom: 1rem;
+  color: #76c7c0;
+  margin-bottom: 1rem;
 }
 
 .status-section p {
-    margin-bottom: 2rem;
-    color: #cccccc;
+  margin-bottom: 2rem;
+  color: #cccccc;
 }
 
 /* Status Cards */
 .status-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .status-card {
-    width: 200px;
-    padding: 1.5rem;
-    background-color: #2a2a2a;
-    border: 1px solid #333;
-    border-radius: 10px;
-    text-align: center;
+  width: 200px;
+  padding: 1.5rem;
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .status-card h2 {
-    margin-bottom: 1rem;
-    color: #76c7c0;
+  margin-bottom: 1rem;
+  color: #76c7c0;
 }
 
 .status-indicator {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: bold;
-    transition: background-color 0.3s;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .status-indicator.up {
-    background-color: #4caf50; /* Green for UP */
-    box-shadow: 0 0 10px 3px #4caf50;
+  background-color: #4caf50; /* Green for UP */
+  box-shadow: 0 0 10px 3px #4caf50;
 }
 
 .status-indicator.down {
-    background-color: #f44336; /* Red for DOWN */
-    box-shadow: 0 0 10px 3px #f44336;
+  background-color: #f44336; /* Red for DOWN */
+  box-shadow: 0 0 10px 3px #f44336;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 1rem 0;
-    background-color: #1e1e1e;
-    color: #666;
-    border-top: 1px solid #333;
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #1e1e1e;
+  color: #666;
+  border-top: 1px solid #333;
 }
 
 footer a {
-    color: #76c7c0;
-    text-decoration: none;
+  color: #76c7c0;
+  text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
