@@ -1,81 +1,81 @@
 /* General styles for the Pricing page */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #d3f1f7, #e6f7f1);
-    /* background: linear-gradient(135deg, #f0f8f8, #f5fff5); */
-    color: #333;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #d3f1f7, #e6f7f1);
+  /* background: linear-gradient(135deg, #f0f8f8, #f5fff5); */
+  color: #333;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    background: #203a43;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #203a43;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-    width: 150px;
-    cursor: pointer;
+  width: 150px;
+  cursor: pointer;
 }
 
 .pricing-container {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
-    text-align: center;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  text-align: center;
 }
 
 h1 {
-    font-size: 3rem;
-    color: #2c3e50;
-    margin-bottom: 30px;
+  font-size: 3rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
 }
 
 .pricing-message {
-    background: #fff;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .pricing-message h2 {
-    font-size: 2.5rem;
-    color: #27ae60;
-    margin-bottom: 15px;
+  font-size: 2.5rem;
+  color: #27ae60;
+  margin-bottom: 15px;
 }
 
 .pricing-message p {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.7;
-    margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
 footer {
-    margin-top: 40px;
-    text-align: center;
+  margin-top: 40px;
+  text-align: center;
 }
 
 .back-to-home-btn {
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    background-color: #27ae60;
-    color: white;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #27ae60;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
 }
 
 .back-to-home-btn:hover {
-    background-color: #2ecc71;
+  background-color: #2ecc71;
 }
