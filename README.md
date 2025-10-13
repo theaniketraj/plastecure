@@ -1,111 +1,109 @@
-# Plastecure - Smart Plastic Waste Management System
+# Plastecure
+
+> **Healing the Earth, one bottle at a time.**
 
 ![Plastecure Banner](https://github.com/theaniketraj/plastecure/blob/main/assets/logo_clean.jpg)
 
-## 🌍 Introduction
+Plastecure is a smart recycling bin system designed to automate and incentivize the process of recycling plastic bottles. It combines hardware and software to create an interactive and rewarding experience for users.
 
-Plastecure is an **IoT-based smart plastic waste management system** that enables efficient recycling by integrating **ESP32, Firebase/Supabase, and a modern web interface**. Users can scan and deposit plastic waste, track their contributions, and redeem incentives via an interactive dashboard.
+## Overview
 
-## 🚀 Features
+The Plastecure system consists of a physical smart bin and a web application. Users interact with the bin to deposit plastic bottles. The bin automatically detects the bottle, and the user's account is credited with points. The web application provides a dashboard for users to track their contributions and rewards.
 
-- ✅ **Smart Plastic Scanning & Authentication** (via ESP32 & sensors)
-- ✅ **Real-time Database Updates** (via Firebase or Supabase)
-- ✅ **User Authentication & Unique Tracking**
-- ✅ **Interactive Web Dashboard** (modern UI with animations)
-- ✅ **Reward-Based Incentive System**
-- ✅ **IoT Integration for Automated Processing**
-- ✅ **Mobile-Responsive & Progressive Web App (PWA) Compatibility**
+The core of the system is a machine learning model that visually identifies plastic bottles, ensuring that only correct items are recycled.
 
----
+## Features
 
-## 🛠️ Tech Stack
+*   **Automated Bottle Detection**: An ESP32-CAM captures an image of the deposited item, and a Python server with a PyTorch model verifies if it's a bottle.
+*   **User Authentication & Rewards**: Users can log in with a unique ID on the machine's keypad. The system tracks the number of bottles deposited and allocates points.
+*   **Real-time Bin Status**: An ultrasonic sensor monitors the fill level of the bin, and an LCD screen displays the status.
+*   **Web Dashboard**: A user-friendly web interface for users to view their recycling statistics and other information.
+*   **Hardware Integration**: The system uses an Arduino to control the physical components like servos, sensors, and the user interface (keypad and LCD).
 
-### 💻 **Frontend (Web UI & Dashboard)**
+## Tech Stack
 
-- **HTML, CSS, JavaScript** (Modern, responsive UI)
-- **Three.js & GSAP** (for animations)
-- **TailwindCSS** (for styling)
+### Hardware
+- **Arduino Uno**: Main controller for the smart bin's hardware components.
+- **ESP32-CAM**: For capturing images for bottle detection.
+- **ESP32**: For I2C communication with the Arduino and potentially Wi-Fi connectivity to the backend.
+- **Sensors**:
+    - PIR Motion Sensor (on ESP32-CAM)
+    - Ultrasonic Sensor (for bin level)
+    - IR Sensor (for bottle counting)
+- **Actuators**:
+    - Servo Motors
+- **User Interface**:
+    - I2C LCD Display
+    - 4x4 Matrix Keypad
 
-### 🖥️ **Backend & Cloud Services**
+### Software & Cloud
+- **Backend**:
+    - **Flask**: Python web server to handle image processing.
+    - **PyTorch**: For the bottle detection machine learning model.
+- **Frontend**:
+    - HTML5
+    - CSS3
+    - JavaScript
+- **Database & Backend-as-a-Service**:
+    - **Firebase**: For user authentication, real-time database, and analytics.
+- **Programming Languages**:
+    - **C++ (Arduino/ESP)**
+    - **Python**
+    - **JavaScript**
 
-- **Firebase Realtime Database** (for dynamic updates)
-- **Supabase** (alternative database setup)
-- **REST APIs & HTTP Requests** (ESP32-cloud communication)
+## Setup and Installation
 
-### 🔌 **IoT & Embedded Systems**
+### 1. API Server
 
-- **ESP32 & Arduino** (hardware integration)
-- **I2C Communication** (for device interfacing)
-- **Wi-Fi Communication** (real-time data transfer)
+The API server is responsible for the machine learning-based bottle detection.
 
----
+1.  **Navigate to the API directory:**
+    ```bash
+    cd API
+    ```
+2.  **Install Python dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Run the server:**
+    ```bash
+    python server_debug.py
+    ```
+    The server will start on `http://localhost:5000`. For the ESP32-CAM to access it, you'll need to expose this local server to the internet using a tool like [ngrok](https://ngrok.com/).
 
-## 🔧 Setup & Installation
+### 2. Hardware (Arduino & ESPs)
 
-### 1️⃣ **Clone the Repository**
+1.  **Open the `.ino` files** in the `Machine Codes` directory with the Arduino IDE.
+2.  **Install necessary libraries** for the Arduino Uno, ESP32, and ESP32-CAM (e.g., `LiquidCrystal_I2C`, `Keypad`, `Servo`, `WiFi`, `HTTPClient`, `ArduinoJson`).
+3.  **Configure the code:**
+    *   In `esp32cam.ino`, update the Wi-Fi credentials (`ssid` and `password`) and the server URL (`serverBase`) to your ngrok forwarding address.
+    *   In `new_arduino.ino`, ensure the I2C address for the LCD and ESP32 are correct.
+4.  **Upload the code** to the respective boards.
 
-```bash
-git clone https://github.com/theaniketraj/plastecure.git
-cd plastecure
+### 3. Web Application
+
+1.  **Open `index.html`** in your browser to view the landing page.
+2.  **Firebase Configuration**: The Firebase configuration is present in `index.html`. Make sure your Firebase project has Authentication and Realtime Database enabled. The security rules for the database should be configured to allow authorized reads and writes.
+
+## Project Structure
+```
+.
+├── API/                # Backend Flask server for ML model
+│   ├── server_debug.py
+│   └── requirements.txt
+├── Machine Codes/      # Code for the microcontrollers
+│   ├── Arduino Uno/
+│   └── esp32 cam/
+├── assets/             # Images and other static assets
+├── scripts/            # JavaScript for the web pages
+├── style/              # CSS stylesheets
+└── *.html              # HTML files for the web application
 ```
 
-### 2️⃣ **Install Dependencies**
+## Contributing
 
-#### **For the Web App:**
+Contributions are welcome! Please feel free to submit a pull request.
 
-```bash
-npm install  # Install required frontend dependencies
-```
+## License
 
-#### **For Firebase Integration (Optional)**
-
-- Set up a Firebase project at [Firebase Console](https://console.firebase.google.com/)
-- Copy your Firebase configuration details into `firebase-config.js`
-
-### 3️⃣ **Run the Web App Locally**
-
-```bash
-npm start  # Starts local development server
-```
-
-### 4️⃣ **Flash the ESP32 Code**
-
-- Open the **Arduino IDE**
-- Install required libraries (`WiFi.h`, `HTTPClient.h`, `FirebaseESP32.h`)
-- Flash `esp32-code.ino` onto your ESP32  
-- Ensure Wi-Fi credentials are set correctly  
-
----
-
-## 🖥️ Usage  
-
-### 1️⃣ **Web Dashboard**
-
-- Open the **Plastecure Web App**
-- Log in using your unique **User ID**
-- Track your recycling progress & redeem points  
-
-### 2️⃣ **IoT Device (ESP32)**
-
-- Scan plastic bottles using the **Smart Scanner**  
-- The system updates the **cloud database** in real-time  
-- Monitor the stats via the dashboard  
-
----
-
-## 📜 API Endpoints  
-
-### 🔥 **Firebase Realtime Database**  
-
-| Method | Endpoint | Description |
-|--------|---------|-------------|
-| `POST` | `/users/{user_id}` | Insert new user data |
-| `GET`  | `/users/{user_id}` | Retrieve user stats |
-| `PUT`  | `/users/{user_id}/bottleCount` | Update bottle count |
-
-### 🌐 **Supabase API**  
-
-| Method | Endpoint | Description |
-|--------|---------|-------------|
-| `POST` | `/users` | Add user & bottle count |
-| `GET`  | `/users?user_id=eq.{user_id}` | Fetch user details |
+This project is licensed under the MIT License. See the `LICENSE` file for details.
